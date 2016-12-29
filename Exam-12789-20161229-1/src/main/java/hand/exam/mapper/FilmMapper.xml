@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 名称空间 必须唯一 -->
+<mapper namespace="hand.exam.domain.Film">
+	<resultMap type="film" id="studentMap">
+		<id property="film_id" column="film_id" />
+		<result property="title" column="title" />
+		<result property="description" column="description" />
+		<result property="language_id" column="language_id" />
+	</resultMap>
+	
+	<insert id="addFilm"  parameterType="film">
+		insert into film(title,description,language_id) values(#{title},#{description},#{language_id})
+	</insert>
+</mapper>
